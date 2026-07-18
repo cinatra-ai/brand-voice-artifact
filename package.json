@@ -37,7 +37,32 @@
           "@cinatra-ai/brand-voice-artifact:brand-voice-matcher"
         ]
       },
-      "matcherConfidenceThreshold": 0.7
+      "matcherConfidenceThreshold": 0.7,
+      "objectTypes": [
+        {
+          "type": "@cinatra-ai/brand-voice:guide",
+          "claim": "dedicated",
+          "dispositions": {
+            "projection": "artifact-safe",
+            "pinnable": true,
+            "snapshotPolicy": "content",
+            "sensitivity": "normal"
+          },
+          "schema": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "voiceAttributes": { "type": "array", "items": { "type": "string" } },
+              "toneGuidance": { "type": "string" },
+              "doList": { "type": "array", "items": { "type": "string" } },
+              "dontList": { "type": "array", "items": { "type": "string" } },
+              "terminology": { "type": "object", "additionalProperties": true },
+              "samplePhrases": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": true
+          }
+        }
+      ]
     }
   }
 }
