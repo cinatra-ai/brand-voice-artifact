@@ -6,9 +6,11 @@ import type { SemanticArtifactManifest } from "@cinatra-ai/sdk-extensions";
 // terminology to use vs avoid. Distinct from the marketing strategy (the GTM
 // plan) and the ICP (the audience).
 //
-// The pack CLAIMS one dedicated typed object under the `@cinatra-ai/brand-voice`
-// namespace: `brand-voice:guide` — the tone-of-voice guide the matcher classifies
-// uploaded documents into. The claim (kind, dispositions, and the inline row JSON
+// The pack CLAIMS one dedicated typed object under its own package name:
+// `@cinatra-ai/brand-voice-artifact:guide` — the tone-of-voice guide the matcher
+// classifies uploaded documents into. The host registers a declared type as an
+// artifact type only under the declaring package's own name, so a type under
+// another namespace would be on no listing. The claim (kind, dispositions, and the inline row JSON
 // Schema it carries as its schema-source) is the manifest of record in
 // package.json `cinatra.artifact.objectTypes`; the object-registry bridge reads
 // it there. This typed export mirrors that manifest IN FULL — the descriptor
@@ -30,7 +32,7 @@ export const brandVoiceArtifactManifest: SemanticArtifactManifest = {
   matcherConfidenceThreshold: 0.7,
   objectTypes: [
     {
-      type: "@cinatra-ai/brand-voice:guide",
+      type: "@cinatra-ai/brand-voice-artifact:guide",
       claim: "dedicated",
       dispositions: {
         projection: "artifact-safe",
