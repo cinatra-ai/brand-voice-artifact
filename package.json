@@ -51,7 +51,7 @@
       "matcherConfidenceThreshold": 0.7,
       "objectTypes": [
         {
-          "type": "@cinatra-ai/brand-voice:guide",
+          "type": "@cinatra-ai/brand-voice-artifact:guide",
           "claim": "dedicated",
           "dispositions": {
             "projection": "artifact-safe",
